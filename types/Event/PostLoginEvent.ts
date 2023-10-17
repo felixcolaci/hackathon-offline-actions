@@ -1,7 +1,7 @@
-import { EventAuthentication } from "./Objects/Authentication"
-import { PostLoginEventRequest as EventRequest } from "./Objects/Request"
-import { PostLoginEventTransaction as EventTransaction } from "./Objects/Transaction"
-import { PostLoginEventUser as EventUser } from "./Objects/User"
+import { EventAuthentication } from "./types/Authentication"
+import { PostLoginEventRequest as EventRequest } from "./types/Request"
+import { PostLoginEventTransaction as EventTransaction } from "./types/Transaction"
+import { PostLoginEventUser as EventUser } from "./types/User"
 
 export interface PostLoginEvent {
     authentication: EventAuthentication,
