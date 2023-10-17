@@ -4,7 +4,7 @@ import { PostLoginEventTransaction as EventTransaction } from "./types/Transacti
 import { PostLoginEventUser as EventUser } from "./types/User"
 
 export interface PostLoginEvent {
-    authentication: EventAuthentication,
+    authentication: EventAuthentication | undefined,
     authorization: EventAuthorization | undefined,
     client: EventClient,
     connection: EventConnection,
@@ -13,7 +13,7 @@ export interface PostLoginEvent {
     resource_server: EventResourceServer | undefined,
     stats: EventStats,
     tenant: EventTenant,
-    transaction: EventTransaction,
+    transaction: EventTransaction | undefined,
     user: EventUser
 }
 
