@@ -1,54 +1,77 @@
 import { EventAuthentication } from "./types/Authentication"
-import { PostLoginEventRequest as EventRequest } from "./types/Request"
-import { PostLoginEventTransaction as EventTransaction } from "./types/Transaction"
-import { PostLoginEventUser as EventUser } from "./types/User"
+import { EventAuthorization } from "./types/Authorization"
+import { EventRequest } from "./types/Request"
+import { EventResourceServer } from "./types/ResourceServer"
+import { EventStats } from "./types/Stats"
+import { EventTenant } from "./types/Tenant"
+import { EventTransaction } from "./types/Transaction"
+import { EventUser } from "./types/User"
+import { EventClient } from "./types/Client"
+import { EventOrganization } from "./types/Organization"
+import { EventConnection } from "./types/Connection"
 
 export interface PostLoginEvent {
-    authentication: EventAuthentication | undefined,
+    /**
+     * Details about authentication signals obtained during the login flow.
+     */
+    authentication: EventAuthentication | undefined,
+    /**
+     * An object containing information describing the authorization granted to the user who is logging in.
+     */
     authorization: EventAuthorization | undefined,
+    /**
+     * Information about the Client with which this login transaction was initiated.
+     */
     client: EventClient,
+    /**
+     * Details about the Connection that was used to authenticate the user.
+     */
     connection: EventConnection,
+    /**
+     * Details about the Organization associated with the current transaction.
+     */
     organization: EventOrganization | undefined,
+    /**
+     * Details about the request that initiated the transaction.
+     */
     request: EventRequest,
+    /**
+     * Details about the resource server to which the access is being requested.
+     */
     resource_server: EventResourceServer | undefined,
+    /**
+     * Login statistics for the current user.
+     */
     stats: EventStats,
+    /**
+     * Details about the Tenant associated with the current transaction.
+     */
     tenant: EventTenant,
-    transaction: EventTransaction | undefined,
-    user: EventUser
+    /**
+     * Details about the current transaction.
+     */
+    transaction: EventTransaction | undefined,
+    /**
+     * An object describing the user on whose behalf the current transaction was initiated.
+     */
+    user: EventUser,
+    /**
+     * An object containing the secrets set in the Auth0 Management Dashboard. 
+     */
+    secrets: {[key:string]:String},
+    //There's multiple undocumented objects within event
+    [key:string]:any
 }
 
-interface EventTenant {
-    id: String
-}
 
-interface EventStats {
-    logins_count: number
-}
 
-interface EventResourceServer {
-    identifier: String
-}
 
-interface EventOrganization {
-    display_name: String,
-    id: String,
-    name: String,
-    metadata: { [key: string]: string }
-}
 
-interface EventConnection {
-    id: String,
-    metadata: { [key: string]: String },
-    name: String,
-    strategy: String
-}
 
-interface EventClient {
-    client_id: String,
-        metadata: { [key: string]: String },
-        name: String
-}
 
-interface EventAuthorization {
-    roles: Array<string>
-}
+
+
+
+
+
+
