@@ -11,87 +11,72 @@ import { EventStats } from "@auth0-testing/types/Event/types/Stats";
 import { EventTenant } from "@auth0-testing/types/Event/types/Tenant";
 import { EventTransaction } from "@auth0-testing/types/Event/types/Transaction";
 import { EventUser } from "@auth0-testing/types/Event/types/User";
+import { MockRequest } from "../entities";
+import { MockClient } from "../entities/client.factory";
+import { MockConnection } from "../entities/connection.factory";
 
-export class MockPostLoginEvent implements PostLoginEvent {
-  [key: string]: any;
-  authentication: EventAuthentication | undefined;
-  authorization: EventAuthorization | undefined;
-  client: EventClient;
-  connection: EventConnection;
-  organization: EventOrganization | undefined;
-  request: EventRequest;
-  resource_server: EventResourceServer | undefined;
-  stats: EventStats;
-  tenant: EventTenant;
-  transaction: EventTransaction | undefined;
-  user: EventUser;
-  secrets: { [key: string]: String };
+/**
+ * TODO: implement risk score
+ * TODO: implement mfa
+ */
+export class MockPostLoginEvent {
+  private _event: PostLoginEvent;
 
   constructor(user: EventUser) {
-    this.user = user;
-    // TODO: extract to own factory
-    this.client = {
-      client_id: faker.string.uuid(),
-      metadata: {},
-      name: "Default Client",
-    };
-    this.secrets = {};
-    // TODO: Extract to own factory
-    this.request = {
-      body: {},
-      geoip: {},
-      hostname: "test.auth0.com",
-      ip: "0.0.0.0",
-      language: "de",
-      method: "POST",
-      query: {},
-      user_agent: "example-user-agent",
-    };
-    this.stats = {
-      logins_count: 1,
-    };
-    this.tenant = {
-      id: "test.auth0.com",
-    };
-    // TODO: extract to own factory
-    this.connection = {
-      id: faker.string.uuid(),
-      name: "TestConnection",
-      strategy: this.user.identities[0].provider || "auth0",
-      metadata: {},
+    this._event = {
+      user,
+      client: new MockClient().build(),
+      request: new MockRequest().build(),
+      connection: new MockConnection().build(),
+      stats: {
+        logins_count: 1,
+      },
+      tenant: {
+        id: "test",
+      },
+      secrets: {},
+      authentication: undefined,
+      authorization: undefined,
+      organization: undefined,
+      resource_server: undefined,
+      transaction: undefined,
     };
   }
 
   fromClient(client: EventClient): MockPostLoginEvent {
-    this.client = client;
+    this._event.client = client;
     return this;
   }
   withConnection(connection: EventConnection): MockPostLoginEvent {
-    this.connection = connection;
+    this._event.connection = connection;
     return this;
   }
   withAuthentication(authentication: EventAuthentication): MockPostLoginEvent {
-    this.authentication = authentication;
+    this._event.authentication = authentication;
     return this;
   }
   withAuthorization(authorization: EventAuthorization): MockPostLoginEvent {
-    this.authorization = authorization;
+    this._event.authorization = authorization;
     return this;
   }
   withOrganization(organization: EventOrganization): MockPostLoginEvent {
-    this.organization = organization;
+    this._event.organization = organization;
     return this;
   }
   setSecret(key: string, value: string): MockPostLoginEvent {
-    this.secrets[key] = value;
+    this._event.secrets[key] = value;
     return this;
   }
   setRequest(request: EventRequest): MockPostLoginEvent {
-    this.request = request;
+    this._event.request = request;
     return this;
   }
   setStats(stats: EventStats): MockPostLoginEvent {
-    this.stats = stats;
+    this._event.stats = stats;
+    return this;
+  }
+  setTenant(tenant: EventTenant): MockPostLoginEvent {
+    this._event.tenant = tenant;
     return this;
   }
 }
