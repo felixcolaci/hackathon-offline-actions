@@ -107,7 +107,7 @@ export interface EventUserIdentity {
   /**
    * User information associated with the connection. When profiles are linked, it is populated with the associated user info for secondary accounts.
    */
-  profileData: { [key: string]: any } | undefined;
+  profileData?: { [key: string]: any } | undefined;
   /**
    * Name of the entity that is authenticating the user, such as Facebook, Google, SAML, or your own provider.
    */
