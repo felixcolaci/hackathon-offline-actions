@@ -1,5 +1,5 @@
-import { AuthenticationMethod, PostLoginEvent } from "../src";
-import { User } from "../src/model/User";
+import { AuthenticationMethod, PostLoginEvent } from "../testing/src";
+import { User } from "../testing/src/model/User";
 
 const mockUser = User.fromFacebook({ email: "i-am-not-generated@atko.email" })
   .addIdentity(User.fromGoogle().identity)
