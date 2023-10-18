@@ -7,11 +7,10 @@ import {
 } from "@auth0-testing/types/Event/types/User";
 import { InternalMockUser } from "../internal/user";
 
-interface CreateMockUserOptions {
-  user?: Partial<EventUser>;
-  connection?: string;
-}
-
+/**
+ * TODO: implement mfa methods
+ * TODO: implement some smart ass stuff to generate more connection specific users
+ */
 export class MockUser {
   private _user: InternalMockUser;
 
