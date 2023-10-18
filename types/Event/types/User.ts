@@ -54,7 +54,7 @@ export interface EventUser {
   /**
    * User's phone number. Only valid for users with SMS connections.
    */
-  phone_number: String | undefined;
+  phone_number: string | undefined;
   /**
    * Indicates whether the user has verified their phone number. Only valid for users with SMS connections.
    */
