@@ -10,11 +10,11 @@ export interface EventUser {
   /**
    * Timestamp indicating when the user profile was first created.
    */
-  created_at: String;
+  created_at: string;
   /**
    * (Unique) User's email address.
    */
-  email: String | undefined;
+  email: string | undefined;
   /**
    * Indicates whether the user has verified their email address.
    */
@@ -26,11 +26,11 @@ export interface EventUser {
   /**
    * User's family name.
    */
-  family_name: String | undefined;
+  family_name: string | undefined;
   /**
    * User's given name.
    */
-  given_name: String | undefined;
+  given_name: string | undefined;
   /**
    * Contains info retrieved from the identity provider with which the user originally authenticates. Users may also link their profile to multiple identity providers; those identities will then also appear in this array. The contents of an individual identity provider object varies by provider.
    */
@@ -38,19 +38,19 @@ export interface EventUser {
   /**
    * Timestamp indicating the last time the user's password was reset/changed. At user creation, this field does not exist. This property is only available for Database connections.
    */
-  last_password_reset: String | undefined;
+  last_password_reset: string | undefined;
   /**
    * List of multi-factor authentication (MFA) providers with which the user is enrolled. This array is updated when the user enrolls in MFA and when an administrator resets a user's MFA enrollments.
    */
-  multifactor: Array<String> | undefined;
+  multifactor: Array<string> | undefined;
   /**
    * User's full name.
    */
-  name: String | undefined;
+  name: string | undefined;
   /**
    * User's nickname.
    */
-  nickname: String | undefined;
+  nickname: string | undefined;
   /**
    * User's phone number. Only valid for users with SMS connections.
    */
@@ -62,15 +62,15 @@ export interface EventUser {
   /**
    * URL pointing to the user's {@link https://auth0.com/docs/users/change-user-picture profile picture}.
    */
-  picture: String | undefined;
+  picture: string | undefined;
   /**
    * Timestamp indicating when the user's profile was last updated/modified.
    */
-  updated_at: String;
+  updated_at: string;
   /**
    * User's unique identifier.
    */
-  user_id: String;
+  user_id: string;
   /**
    * Custom fields that store info about a user that does not impact what they can or cannot access, such as work address, home address, or user preferences.
    */
@@ -78,7 +78,7 @@ export interface EventUser {
   /**
    * User's username.
    */
-  username: String | undefined;
+  username: string | undefined;
 }
 
 export interface EventUserEnrolledFactor {
@@ -99,7 +99,7 @@ export interface EventUserIdentity {
   /**
    * Name of the Auth0 connection used to authenticate the user.
    */
-  connection: String | undefined;
+  connection: string | undefined;
   /**
    * Indicates whether the connection is a social one.
    */
@@ -111,9 +111,9 @@ export interface EventUserIdentity {
   /**
    * Name of the entity that is authenticating the user, such as Facebook, Google, SAML, or your own provider.
    */
-  provider: String | undefined;
+  provider: string | undefined;
   /**
    * User's unique identifier for this connection/provider.
    */
-  user_id: String | undefined;
+  user_id: string | undefined;
 }
