@@ -12,7 +12,7 @@ import { EventConnection } from "./types/Connection"
 
 export type EventAuthenticationPRPC = Omit<EventAuthentication, 'riskAssessment' | 'confidence' | 'version' >;
 export type EventTransactionPRPC = Pick<EventTransaction, 'locale' | 'login_hint' | 'state' | 'ui_locales'>;
-export interface PostLoginEvent {
+export interface PasswordResetPostChallengeEvent {
     /**
      * Details about authentication signals obtained during the login flow.
      */

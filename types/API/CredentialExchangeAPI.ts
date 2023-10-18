@@ -1,6 +1,6 @@
-import { ApiCache } from "./types/APICache"
-import { ApiAccess } from "./types/ApiAccess"
-import { ApiAccessToken } from "./types/ApiAccessToken"
+import { ApiCache } from "./types/ApiCache";
+import { ApiAccess } from "./types/ApiAccess";
+import { ApiAccessToken } from "./types/ApiAccessToken";
 
 
 export type ApiAccessTokenCC = Omit<ApiAccessToken, 'addScope' | 'removeScope'>;

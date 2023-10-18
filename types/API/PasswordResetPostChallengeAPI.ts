@@ -1,9 +1,9 @@
-import { ApiCache } from "./types/ApiCache"
-import { ApiRedirect } from "./types/ApiRedirect"
-import { ApiAccess } from "./types/ApiAccess"
-import { ApiAuthentication } from "./types/ApiAuthentication"
+import { ApiCache } from "./types/ApiCache";
+import { ApiRedirect } from "./types/ApiRedirect";
+import { ApiAccess } from "./types/ApiAccess";
+import { ApiAuthentication } from "./types/ApiAuthentication";
 
-export interface PostLoginAPI {
+export interface PasswordResetPostChallengeAPI {
     /**
      * Modify the user's login access, such as by rejecting the login attempt.
      */
