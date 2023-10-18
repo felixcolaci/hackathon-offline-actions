@@ -34,14 +34,14 @@ export interface EventRequest {
 }
 
 interface EventRequestGeoip {
-  cityName: string | undefined;
-  continentCode: string | undefined;
-  countryCode: string | undefined;
-  countryCode3: string | undefined;
-  countryName: string | undefined;
-  latitude: string | undefined;
-  longitude: string | undefined;
-  subdivisionCode: string | undefined;
-  subdivisionName: string | undefined;
-  timeZone: string | undefined;
+  cityName?: string | undefined;
+  continentCode?: string | undefined;
+  countryCode?: string | undefined;
+  countryCode3?: string | undefined;
+  countryName?: string | undefined;
+  latitude?: string | undefined;
+  longitude?: string | undefined;
+  subdivisionCode?: string | undefined;
+  subdivisionName?: string | undefined;
+  timeZone?: string | undefined;
 }
