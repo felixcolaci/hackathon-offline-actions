@@ -6,7 +6,7 @@ import {
 } from "@auth0-testing/types/Event/types/User";
 import { faker } from "@faker-js/faker/locale/de";
 
-export abstract class InternalMockUser implements EventUser {
+export class InternalMockUser implements EventUser {
   app_metadata: { [key: string]: any };
   created_at: string;
   email: string | undefined;
@@ -48,7 +48,7 @@ export abstract class InternalMockUser implements EventUser {
    * @param identity
    * @returns
    */
-  addIdentity(identity: EventUserIdentity): EventUser {
+  addIdentity(identity: EventUserIdentity): InternalMockUser {
     if (!this.identities) {
       this.identities = [identity];
     } else {
@@ -62,7 +62,7 @@ export abstract class InternalMockUser implements EventUser {
    * @param identity
    * @returns
    */
-  removeIdentity(identity: EventUserIdentity): EventUser {
+  removeIdentity(identity: EventUserIdentity): InternalMockUser {
     this.identities = this.identities.filter((id) => id.user_id === identity.user_id);
     return this;
   }
@@ -72,7 +72,7 @@ export abstract class InternalMockUser implements EventUser {
    * @param metadata
    * @returns
    */
-  setUserMetadata(metadata: EventUserMetadata): EventUser {
+  setUserMetadata(metadata: EventUserMetadata): InternalMockUser {
     this.user_metadata = metadata;
     return this;
   }
@@ -82,7 +82,7 @@ export abstract class InternalMockUser implements EventUser {
    * @param metadata
    * @returns
    */
-  setAppMetadata(metadata: EventUserMetadata): EventUser {
+  setAppMetadata(metadata: EventUserMetadata): InternalMockUser {
     this.app_metadata = metadata;
     return this;
   }
@@ -91,12 +91,20 @@ export abstract class InternalMockUser implements EventUser {
    * @param factor
    * @returns
    */
-  addFactorEnrollment(factor: EventUserEnrolledFactor): EventUser {
+  addFactorEnrollment(factor: EventUserEnrolledFactor): InternalMockUser {
     if (!this.enrolledFactors) {
       this.enrolledFactors = [factor];
     } else {
       this.enrolledFactors.push(factor);
     }
     return this;
+  }
+
+  /**
+   * Lock and return user
+   */
+  build(): EventUser {
+    Object.freeze(this);
+    return this as EventUser;
   }
 }

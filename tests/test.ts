@@ -1,11 +1,15 @@
-import { AuthenticationMethod, PostLoginEvent } from "../testing/src";
-import { User } from "../testing/src/model/User";
+import { MockPostLoginEvent, MockUser } from "../src/factories";
 
-const mockUser = User.fromFacebook({ email: "i-am-not-generated@atko.email" })
-  .addIdentity(User.fromGoogle().identity)
+const mockUser = MockUser.fromFacebook({ email: "i-am-not-generated@atko.email" })
+  // add a linked account
+  .addIdentity(MockUser.fromGoogle().identity)
+  // overwrite metadata
   .setUserMetadata({ foo: "bar" })
-  .addFactorEnrollment({ type: "email", options: {} });
+  // enroll with mfa
+  .addFactorEnrollment({ type: "email", options: {} })
+  // lock object
+  .build();
 
 console.log(JSON.stringify(mockUser, null, 2));
 
-const event = new PostLoginEvent().byUser(mockUser).withMfa(new AuthenticationMethod()).build();
+const event = new MockPostLoginEvent(mockUser).build();
