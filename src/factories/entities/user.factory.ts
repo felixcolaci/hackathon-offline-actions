@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker/locale/de";
 import { EventUser } from "@auth0-testing/types/Event/types/User";
-import { InternalMockUser } from "./internal/user";
+import { InternalMockUser } from "../internal/user";
 
 interface CreateMockUserOptions {
   user?: EventUser;
