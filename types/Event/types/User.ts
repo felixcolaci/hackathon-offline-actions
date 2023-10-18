@@ -6,7 +6,7 @@ export interface EventUser {
   /**
    * Custom fields that store info about a user that influences the user's access, such as support plan, security roles, or access control groups.
    */
-  app_metadata: { [key: string]: any };
+  app_metadata: EventUserMetadata;
   /**
    * Timestamp indicating when the user profile was first created.
    */
@@ -74,7 +74,7 @@ export interface EventUser {
   /**
    * Custom fields that store info about a user that does not impact what they can or cannot access, such as work address, home address, or user preferences.
    */
-  user_metadata: { [key: string]: any };
+  user_metadata: EventUserMetadata;
   /**
    * User's username.
    */
@@ -116,4 +116,11 @@ export interface EventUserIdentity {
    * User's unique identifier for this connection/provider.
    */
   user_id: string | undefined;
+}
+
+/**
+ * Generic representation of user_metadata | app_metadata
+ */
+export interface EventUserMetadata {
+  [key: string]: any;
 }
