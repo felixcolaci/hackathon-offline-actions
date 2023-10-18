@@ -33,7 +33,7 @@ export interface EventRequest {
   user_agent: string | undefined;
 }
 
-interface EventRequestGeoip {
+export interface EventRequestGeoip {
   cityName?: string | undefined;
   continentCode?: string | undefined;
   countryCode?: string | undefined;
