@@ -37,7 +37,7 @@ export class MockPostLoginApi implements PostLoginAPI {
 }
 
 class MockAccess implements ApiAccess {
-  deny = jest.fn((reason: string) => console.log(reason));
+  deny = jest.fn();
 }
 
 class MockAccessToken implements ApiAccessToken {

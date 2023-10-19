@@ -26,6 +26,7 @@ describe("test-action", () => {
       expect(mockApi.access.deny).not.toBeCalled();
     });
   });
+
   describe("client based access", () => {
     let mockApi: PostLoginAPI;
     let mockUser: EventUser;
