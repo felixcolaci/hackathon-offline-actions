@@ -10,7 +10,7 @@ import { PostLoginEvent } from "@auth0-testing/types/Event/PostLoginEvent";
 exports.onExecutePostLogin = async (event: PostLoginEvent, api: PostLoginAPI) => {
   api.accessToken.setCustomClaim("foo", "bar");
   if (event.client.name === "my-web-app") {
-    api.access.deny();
+    api.access.deny("unallowed client");
   }
 };
 

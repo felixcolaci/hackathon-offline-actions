@@ -48,6 +48,7 @@ describe("test-action", () => {
         .build();
       await onExecutePostLogin(mockEvent, mockApi);
       expect(mockApi.access.deny).toBeCalled();
+      expect(mockApi.access.deny).toHaveBeenCalledWith("unallowed client");
     });
   });
 });
