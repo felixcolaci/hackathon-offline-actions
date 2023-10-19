@@ -1,4 +1,4 @@
-import { EventClient } from "@auth0-testing/types/Event/types/Client";
+import { EventClient } from "@auth0-testing/types/Event";
 import { faker } from "@faker-js/faker/locale/de";
 
 interface NewMockClientProperties {

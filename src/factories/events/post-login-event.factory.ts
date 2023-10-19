@@ -1,16 +1,15 @@
-import { faker } from "@faker-js/faker/locale/de";
-import { PostLoginEvent } from "@auth0-testing/types/Event/PostLoginEvent";
-import { EventAuthentication } from "@auth0-testing/types/Event/types/Authentication";
-import { EventAuthorization } from "@auth0-testing/types/Event/types/Authorization";
-import { EventClient } from "@auth0-testing/types/Event/types/Client";
-import { EventConnection } from "@auth0-testing/types/Event/types/Connection";
-import { EventOrganization } from "@auth0-testing/types/Event/types/Organization";
-import { EventRequest } from "@auth0-testing/types/Event/types/Request";
-import { EventResourceServer } from "@auth0-testing/types/Event/types/ResourceServer";
-import { EventStats } from "@auth0-testing/types/Event/types/Stats";
-import { EventTenant } from "@auth0-testing/types/Event/types/Tenant";
-import { EventTransaction } from "@auth0-testing/types/Event/types/Transaction";
-import { EventUser } from "@auth0-testing/types/Event/types/User";
+import {
+  EventAuthentication,
+  EventAuthorization,
+  EventClient,
+  EventConnection,
+  EventOrganization,
+  EventRequest,
+  EventStats,
+  EventTenant,
+  EventUser,
+  PostLoginEvent,
+} from "@auth0-testing/types/Event";
 import { MockRequest } from "../entities";
 import { MockClient } from "../entities/client.factory";
 import { MockConnection } from "../entities/connection.factory";
