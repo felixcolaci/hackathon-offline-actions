@@ -1,4 +1,4 @@
-import { MockClient } from "../../../src/factories";
+import { MockClient } from "@felixcolaci/auth0-testing";
 import { denyAccess } from "./deny-access-by-client";
 
 describe("deny access for certain clients", () => {

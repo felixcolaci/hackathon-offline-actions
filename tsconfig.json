@@ -9,7 +9,9 @@
     "declaration": true,
     "outDir": "dist",
     "paths": {
-      "@felixcolaci/auth0-testing/types": ["./src/types"]
+      "@felixcolaci/auth0-testing/types": ["./src/types"],
+      "@felixcolaci/auth0-testing/types/events": ["./src/types/Event/types"],
+      "@felixcolaci/auth0-testing/types/apis": ["./src/types/API/types"]
     }
   },
   "include": ["./src"]

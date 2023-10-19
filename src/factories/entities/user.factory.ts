@@ -4,7 +4,7 @@ import {
   EventUserEnrolledFactor,
   EventUserIdentity,
   EventUserMetadata,
-} from "@felixcolaci/auth0-testing/types";
+} from "@felixcolaci/auth0-testing/types/events";
 import { InternalMockUser } from "../internal/user";
 
 /**

@@ -1,5 +1,4 @@
-import { PostLoginAPI } from "../../src/types/API/PostLoginAPI";
-import { PostLoginEvent } from "../../src/types/Event/PostLoginEvent";
+import { PostLoginEvent, PostLoginAPI } from "@felixcolaci/auth0-testing";
 
 /**
  * Handler that will be called during the execution of a PostLogin flow.

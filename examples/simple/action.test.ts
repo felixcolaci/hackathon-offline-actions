@@ -1,8 +1,12 @@
-import { PostLoginAPI } from "../../src/types/API/PostLoginAPI";
-import { MockPostLoginApi } from "../../src/apis";
-import { MockClient, MockPostLoginEvent, MockUser } from "../../src/factories";
-import { PostLoginEvent } from "../../src/types/Event/PostLoginEvent";
-import { EventUser } from "../../src/types/Event/types/User";
+import {
+  EventUser,
+  MockClient,
+  MockPostLoginApi,
+  MockPostLoginEvent,
+  MockUser,
+  PostLoginAPI,
+  PostLoginEvent,
+} from "@felixcolaci/auth0-testing";
 const { onExecutePostLogin } = require("./action");
 
 describe("test-action", () => {

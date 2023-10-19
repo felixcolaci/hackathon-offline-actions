@@ -3,7 +3,7 @@ import {
   EventUserEnrolledFactor,
   EventUserIdentity,
   EventUserMetadata,
-} from "@felixcolaci/auth0-testing/types";
+} from "@felixcolaci/auth0-testing/types/events";
 import { faker } from "@faker-js/faker/locale/de";
 
 export class InternalMockUser implements EventUser {
