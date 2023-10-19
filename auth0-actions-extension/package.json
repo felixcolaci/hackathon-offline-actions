@@ -1,0 +1,113 @@
+{
+  "name": "auth0-actions",
+  "displayName": "Auth0 Actions",
+  "description": "Develop Auth0 (by Okta) Actions locally with VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "auth0-actions.connectTenant",
+        "title": "Connect your existing Auth0 tenant"
+      },
+      {
+        "command": "auth0-actions.pushActions",
+        "title": "Push all actions in to your tenant"
+      },
+      {
+        "command": "auth0-actions.refresh",
+        "title": "Pull",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "auth0-actions.new",
+        "title": "Pull",
+        "icon": "$(add)"
+      },
+      {
+        "command": "auth0-actions.push",
+        "title": "Pull",
+        "icon": "$(cloud-upload)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "auth0-actions",
+          "title": "Auth0 Actions",
+          "icon": "resources/auth0-logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "auth0-actions": [
+        {
+          "id": "auth0-tenants",
+          "name": "Tenants"
+        },
+        {
+          "id": "auth0-actions",
+          "name": "Actions"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "auth0-tenants",
+        "contents": "Connect your tenant first.\n[Conntect Tenant](command:auth0-actions.connectTenant)",
+        "when": "workbenchState == empty"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "auth0-actions.refresh",
+          "when": "view == auth0-actions",
+          "group": "navigation"
+        },
+        {
+          "command": "auth0-actions.new",
+          "when": "view == auth0-actions",
+          "group": "navigation"
+        },
+        {
+          "command": "auth0-actions.push",
+          "when": "view == auth0-actions",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
