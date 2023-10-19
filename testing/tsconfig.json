@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "Node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node16",
+    //"typeRoots": ["src/definitions", "node_modules/@types"],
+    "declaration": true,
+    "outDir": "dist/esm",
+    "baseUrl": "./src"
+  },
+  "include": ["./src"]
+}
