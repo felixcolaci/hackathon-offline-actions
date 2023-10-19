@@ -1,5 +1,4 @@
-import { PostLoginAPI } from "@auth0-testing/types/API/PostLoginAPI";
-import { PostLoginEvent } from "@auth0-testing/types/Event/PostLoginEvent";
+import { PostLoginEvent, PostLoginAPI } from "@felixcolaci/auth0-testing";
 
 /**
  * Handler that will be called during the execution of a PostLogin flow.
@@ -10,7 +9,7 @@ import { PostLoginEvent } from "@auth0-testing/types/Event/PostLoginEvent";
 exports.onExecutePostLogin = async (event: PostLoginEvent, api: PostLoginAPI) => {
   api.accessToken.setCustomClaim("foo", "bar");
   if (event.client.name === "my-web-app") {
-    api.access.deny();
+    api.access.deny("unallowed client");
   }
 };
 

@@ -1,8 +1,12 @@
-import { PostLoginAPI } from "@auth0-testing/types/API/PostLoginAPI";
-import { MockPostLoginApi } from "../../src/apis";
-import { MockClient, MockPostLoginEvent, MockUser } from "../../src/factories";
-import { PostLoginEvent } from "@auth0-testing/types/Event/PostLoginEvent";
-import { EventUser } from "@auth0-testing/types/Event/types/User";
+import {
+  EventUser,
+  MockClient,
+  MockPostLoginApi,
+  MockPostLoginEvent,
+  MockUser,
+  PostLoginAPI,
+  PostLoginEvent,
+} from "@felixcolaci/auth0-testing";
 const { onExecutePostLogin } = require("./action");
 
 describe("test-action", () => {
@@ -48,6 +52,7 @@ describe("test-action", () => {
         .build();
       await onExecutePostLogin(mockEvent, mockApi);
       expect(mockApi.access.deny).toBeCalled();
+      expect(mockApi.access.deny).toHaveBeenCalledWith("unallowed client");
     });
   });
 });

@@ -1,6 +1,4 @@
-import { ApiCache } from "./types/ApiCache";
-import { ApiUser } from "./types/ApiUser";
-import { ApiAccess } from "./types/ApiAccess";
+import { ApiAccess, ApiCache, ApiUser } from "./types";
 
 export interface PreUserRegistrationAPI {
   /**
@@ -18,5 +16,4 @@ export interface PreUserRegistrationAPI {
     NOTE: Invoking these methods won't update the metadata immediately. You can call them several times throughout multiple actions of the same flow and the engine will aggregate the changes and update the metadata at once before the flow is completed.
      */
   user: ApiUser;
-
 }
