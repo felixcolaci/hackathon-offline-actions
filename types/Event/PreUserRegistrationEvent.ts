@@ -1,11 +1,11 @@
 import { EventClient, EventConnection, EventRequest, EventTenant, EventTransaction, EventUser } from "./types";
 
-export type EventRequestPUR = Omit<EventRequest, "query">;
-export type EventTransactionPUR = Pick<
+type EventRequestPUR = Omit<EventRequest, "query">;
+type EventTransactionPUR = Pick<
   EventTransaction,
   "locale" | "acr_values" | "protocol" | "requested_scopes" | "ui_locales"
 >;
-export type EventUserPUR = Pick<
+type EventUserPUR = Pick<
   EventUser,
   | "app_metadata"
   | "email"

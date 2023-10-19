@@ -1,11 +1,11 @@
 import { EventConnection, EventRequest, EventTenant, EventTransaction, EventUser } from "./types";
 
-export type EventRequestPUR = Omit<EventRequest, "query">;
-export type EventTransactionPUR = Pick<
+type EventRequestPUR = Omit<EventRequest, "query">;
+type EventTransactionPUR = Pick<
   EventTransaction,
   "locale" | "acr_values" | "protocol" | "requested_scopes" | "ui_locales"
 >;
-export type EventUserPUR = Omit<EventUser, "enrolledFactors">;
+type EventUserPUR = Omit<EventUser, "enrolledFactors">;
 export interface PostUserRegistrationEvent {
   /**
    * Details about the Connection that was used to authenticate the user.
