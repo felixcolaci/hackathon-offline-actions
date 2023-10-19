@@ -1,12 +1,9 @@
-import { ApiCache } from "./types/ApiCache";
-import { ApiAccess } from "./types/ApiAccess";
-import { ApiAccessToken } from "./types/ApiAccessToken";
+import { ApiAccess, ApiAccessToken, ApiCache } from "./types";
 
-
-export type ApiAccessTokenCC = Omit<ApiAccessToken, 'addScope' | 'removeScope'>;
+export type ApiAccessTokenCC = Omit<ApiAccessToken, "addScope" | "removeScope">;
 
 export interface CredentialExchangeAPI {
-    access: ApiAccess,
-    accessToken: ApiAccessTokenCC,
-    cache: ApiCache,
+  access: ApiAccess;
+  accessToken: ApiAccessTokenCC;
+  cache: ApiCache;
 }
