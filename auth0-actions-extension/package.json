@@ -35,6 +35,16 @@
         "command": "auth0-actions.push",
         "title": "Pull",
         "icon": "$(cloud-upload)"
+      },
+      {
+        "command": "auth0-actions.edit",
+        "title": "Edit",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "auth0-actions.delete",
+        "title": "Delete",
+        "icon": "$(delete)"
       }
     ],
     "viewsContainers": {
@@ -68,12 +78,12 @@
     "menus": {
       "view/title": [
         {
-          "command": "auth0-actions.refresh",
+          "command": "auth0-actions.new",
           "when": "view == auth0-actions",
           "group": "navigation"
         },
         {
-          "command": "auth0-actions.new",
+          "command": "auth0-actions.refresh",
           "when": "view == auth0-actions",
           "group": "navigation"
         },
@@ -81,6 +91,17 @@
           "command": "auth0-actions.push",
           "when": "view == auth0-actions",
           "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "auth0-actions.edit",
+          "when": "view == auth0-actions",
+          "group": "inline"
+        },
+        {
+          "command": "auth0-actions.delete",
+          "when": "view == auth0-actions"
         }
       ]
     }

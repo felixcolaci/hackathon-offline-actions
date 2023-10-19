@@ -24,6 +24,32 @@ export function activate(context: vscode.ExtensionContext) {
 		let url :string= context.globalState.get('auth0_url') as string;
 		getActions(url, token);
 	})
+	vscode.commands.registerCommand('auth0-actions.edit', (element) => {
+		let code = element.children[4].label;
+		let name = element.label;
+		const editor = vscode.window.activeTextEditor;
+		if (editor) {
+			editor.edit(builder => {
+				const doc = vscode.window.activeTextEditor!.document;
+				if(doc){
+					builder.replace(new vscode.Range(doc.lineAt(0).range.start, doc.lineAt(doc.lineCount - 1).range.end), code);
+				}else {
+					builder.replace(editor.selection.active, code);
+				}
+			});
+		}
+		// var setting: vscode.Uri = vscode.Uri.parse(name + ".js");
+		// vscode.workspace.openTextDocument(setting).then((a: vscode.TextDocument) => {
+		// 	vscode.window.showTextDocument(a, 1, false).then(e => {
+		// 		e.edit(edit => {
+		// 			edit.insert(new vscode.Position(0, 0), code);
+		// 		});
+		// 	});
+		// }, (error: any) => {
+		// 	console.error(error);
+		// 	debugger;
+		// });
+	})
 
 	context.subscriptions.push(disposable);
 }
@@ -137,7 +163,8 @@ class TreeItemTenant extends vscode.TreeItem {
 				new TreeItemAction('trigger: ' + actions[i].supported_triggers[0].id),
 				new TreeItemAction('runtime: ' + actions[i].runtime),
 				new TreeItemAction('status: ' + actions[i].status),
-				new TreeItemAction('id: ' + actions[i].id)
+				new TreeItemAction('id: ' + actions[i].id), 
+				new TreeItemAction(actions[i].code)
 			]))
 		}
 		this.data = tree;
