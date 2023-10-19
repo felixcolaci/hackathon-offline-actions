@@ -1,7 +1,7 @@
-import { PostLoginAPI } from "@auth0-testing/types/API";
-import { EventUser, PostLoginEvent } from "@auth0-testing/types/Event";
-import { MockClient, MockPostLoginEvent, MockUser } from "../../../src/factories";
-import { MockPostLoginApi } from "../../../src/apis";
+import { PostLoginAPI } from "../../src/types/API";
+import { EventUser, PostLoginEvent } from "../../src/types/Event";
+import { MockClient, MockPostLoginEvent, MockUser } from "../../src/factories";
+import { MockPostLoginApi } from "../../src/apis";
 const { onExecutePostLogin } = require("./action");
 jest.mock("./src/deny-access-by-client.ts", () => {
   return {

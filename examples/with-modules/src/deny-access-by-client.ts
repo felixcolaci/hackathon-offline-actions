@@ -1,4 +1,4 @@
-import { EventClient } from "@auth0-testing/types/Event";
+import { EventClient } from "../../../src/types/Event";
 
 const denyListedClients = ["my-web-app"];
 

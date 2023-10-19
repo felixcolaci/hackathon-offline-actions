@@ -9,7 +9,7 @@ import {
   EventTenant,
   EventUser,
   PostLoginEvent,
-} from "@auth0-testing/types/Event";
+} from "../../types/Event";
 import { MockRequest } from "../entities";
 import { MockClient } from "../entities/client.factory";
 import { MockConnection } from "../entities/connection.factory";

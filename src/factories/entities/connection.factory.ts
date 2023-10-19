@@ -1,4 +1,4 @@
-import { EventConnection, EventUser } from "@auth0-testing/types/Event";
+import { EventConnection, EventUser } from "../../types/Event";
 import { faker } from "@faker-js/faker/locale/de";
 
 export class MockConnection {
