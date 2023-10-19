@@ -9,7 +9,7 @@ import {
   ApiSAMLResponse,
   ApiUser,
   PostLoginAPI,
-} from "../types/API";
+} from "@felixcolaci/auth0-testing/types";
 
 export class MockPostLoginApi implements PostLoginAPI {
   access: ApiAccess;

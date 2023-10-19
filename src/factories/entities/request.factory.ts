@@ -1,4 +1,4 @@
-import { EventRequest, EventRequestGeoip } from "../../types/Event";
+import { EventRequest, EventRequestGeoip } from "@felixcolaci/auth0-testing/types";
 
 export class MockRequest {
   private _request: EventRequest;

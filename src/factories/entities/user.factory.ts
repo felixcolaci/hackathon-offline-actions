@@ -1,5 +1,10 @@
 import { faker } from "@faker-js/faker/locale/de";
-import { EventUser, EventUserEnrolledFactor, EventUserIdentity, EventUserMetadata } from "../../types/Event";
+import {
+  EventUser,
+  EventUserEnrolledFactor,
+  EventUserIdentity,
+  EventUserMetadata,
+} from "@felixcolaci/auth0-testing/types";
 import { InternalMockUser } from "../internal/user";
 
 /**
