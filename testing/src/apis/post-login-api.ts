@@ -8,8 +8,8 @@ import {
   ApiRedirect,
   ApiSAMLResponse,
   ApiUser,
-} from "../types/API/types";
-import { PostLoginAPI } from "../types";
+  PostLoginAPI,
+} from "@felixcolaci/auth0-actions-type-definitions";
 
 export class MockPostLoginApi implements PostLoginAPI {
   access: ApiAccess;

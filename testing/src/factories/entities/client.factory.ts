@@ -1,5 +1,5 @@
-import { EventClient } from "../../types/Event/types";
 import { faker } from "@faker-js/faker/locale/de";
+import { EventClient } from "@felixcolaci/auth0-actions-type-definitions";
 
 interface NewMockClientProperties {
   clientId?: string;

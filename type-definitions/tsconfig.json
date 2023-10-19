@@ -9,12 +9,7 @@
     //"typeRoots": ["src/definitions", "node_modules/@types"],
     "declaration": true,
     "outDir": "dist/esm",
-    "baseUrl": "./src",
-    "paths": {
-      "@felixcolaci/auth0-testing/types": ["types"],
-      "@felixcolaci/auth0-testing/types/events": ["types/Event/types"],
-      "@felixcolaci/auth0-testing/types/apis": ["types/API/types"]
-    }
+    "baseUrl": "./src"
   },
   "include": ["./src"]
 }

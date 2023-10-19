@@ -8,9 +8,9 @@ import {
   EventStats,
   EventTenant,
   EventUser,
-} from "../../types/Event/types";
+  PostLoginEvent,
+} from "@felixcolaci/auth0-actions-type-definitions";
 import { MockRequest, MockClient, MockConnection } from "../entities";
-import { PostLoginEvent } from "../../types";
 
 /**
  * TODO: implement risk score
