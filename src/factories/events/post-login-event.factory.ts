@@ -79,4 +79,8 @@ export class MockPostLoginEvent {
     this._event.tenant = tenant;
     return this;
   }
+  build(): PostLoginEvent {
+    Object.freeze(this);
+    return this._event;
+  }
 }

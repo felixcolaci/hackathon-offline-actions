@@ -1,12 +1,14 @@
-import { ApiCache } from "./types/ApiCache";
-import { ApiIdToken } from "./types/ApiIdToken";
-import { ApiMultifactor } from "./types/ApiMultifactor";
-import { ApiRedirect } from "./types/ApiRedirect";
-import { ApiSAMLResponse } from "./types/ApiSAMLResponse";
-import { ApiUser } from "./types/ApiUser";
-import { ApiAccess } from "./types/ApiAccess";
-import { ApiAccessToken } from "./types/ApiAccessToken";
-import { ApiAuthentication } from "./types/ApiAuthentication";
+import {
+  ApiAccess,
+  ApiAccessToken,
+  ApiAuthentication,
+  ApiCache,
+  ApiIdToken,
+  ApiMultifactor,
+  ApiRedirect,
+  ApiSAMLResponse,
+  ApiUser,
+} from "./types";
 
 export interface PostLoginAPI {
   /**

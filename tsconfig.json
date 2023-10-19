@@ -107,6 +107,7 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "paths": {
       "@auth0-testing/types/*": ["./types/*"]
-    }
+    },
+    "typeRoots": ["types", "node_modules/@types"]
   }
 }
