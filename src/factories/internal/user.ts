@@ -1,9 +1,4 @@
-import {
-  EventUser,
-  EventUserEnrolledFactor,
-  EventUserIdentity,
-  EventUserMetadata,
-} from "@felixcolaci/auth0-testing/types/events";
+import { EventUser, EventUserEnrolledFactor, EventUserIdentity, EventUserMetadata } from "../../types/Event/types";
 import { faker } from "@faker-js/faker/locale/de";
 
 export class InternalMockUser implements EventUser {
