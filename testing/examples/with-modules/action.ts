@@ -1,5 +1,4 @@
-import { PostLoginAPI } from "../../src/types/API/PostLoginAPI";
-import { PostLoginEvent } from "../../src/types/Event/PostLoginEvent";
+import { PostLoginAPI, PostLoginEvent } from "@felixcolaci/auth0-actions-type-definitions";
 import { denyAccess } from "./src/deny-access-by-client";
 
 /**
