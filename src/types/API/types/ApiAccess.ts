@@ -9,5 +9,5 @@ export interface ApiAccess {
    * @param reason A human-readable explanation for rejecting the login. This may be presented directly in end-user interfaces.
    * @returns Returns a reference to the api object.
    */
-  deny(reason?: String): void;
+  deny(reason: String): void;
 }

@@ -1,16 +1,15 @@
-import { PostLoginAPI } from "@auth0-testing/types/API/PostLoginAPI";
 import {
+  ApiAccess,
+  ApiAccessToken,
+  ApiAuthentication,
   ApiCache,
   ApiIdToken,
   ApiMultifactor,
   ApiRedirect,
   ApiSAMLResponse,
   ApiUser,
-} from "@auth0-testing/types/API/types";
-
-import { ApiAccess } from "@auth0-testing/types/API/types/ApiAccess";
-import { ApiAccessToken } from "@auth0-testing/types/API/types/ApiAccessToken";
-import { ApiAuthentication } from "@auth0-testing/types/API/types/ApiAuthentication";
+} from "@felixcolaci/auth0-testing/types/apis";
+import { PostLoginAPI } from "@felixcolaci/auth0-testing/types";
 
 export class MockPostLoginApi implements PostLoginAPI {
   access: ApiAccess;
